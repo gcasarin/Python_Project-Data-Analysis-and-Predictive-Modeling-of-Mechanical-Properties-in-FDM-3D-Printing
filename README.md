@@ -1,0 +1,2 @@
+# Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing
+This study uses the "3D Printer Dataset for Mechanical Engineers" to investigate relationships between FDM printing parameters and the mechanical properties of PLA and ABS specimens. Statistical analysis, correlation assessment, and predictive models are developed to estimate surface roughness and tensile strength.
