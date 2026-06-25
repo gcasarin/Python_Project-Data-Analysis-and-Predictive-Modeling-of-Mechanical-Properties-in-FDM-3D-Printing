@@ -62,7 +62,7 @@ The univariate analysis of mechanical test results showed that PLA generally ach
 Correlation analysis revealed several significant relationships between process parameters and mechanical properties. Layer height showed a strong positive correlation with surface roughness (r ≈ 0.8), indicating that larger layer heights lead to poorer surface quality. 
 
 <p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/8.png" width="600">
+  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/8.png" width="500">
 </p>
 
 Tensile strength increased with both wall thickness (r ≈ 0.4) and infill density (r ≈ 0.36), confirming the positive effect of structural reinforcement on mechanical resistance. Material-dependent behaviors were also observed: PLA tensile strength was more sensitive to infill density, whereas ABS strength was more influenced by wall thickness. 
@@ -79,37 +79,36 @@ Finally, elongation exhibited a moderate negative correlation with nozzle temper
 
 Predictive modeling was performed to estimate surface roughness and tensile strength from FDM printing parameters. 
 
-For **surface roughness prediction**, a *linear regression model* was developed using the most relevant features identified during the correlation analysis (*layer height, nozzle temperature, wall thickness, and material type*). 
+1. For **surface roughness prediction**, an easy-to-use *linear regression model* was developed using the most relevant features identified during the correlation analysis (*layer height, nozzle temperature, wall thickness, and material type*). 
 
-<p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10a.png" width="600">
-</p>
+   <p align="center">
+     <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10a.png" width="600">
+   </p>
+  
+   The model trained on the single fold achieved good predictive performance (*R² = 0.81*), indicating that roughness can be effectively explained by a limited set of process parameters. The results, as you can see from the predictive linear equation below, confirmed layer height and nozzle temperature are the most influential variables.
+  
+   <p align="center">
+     <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10.png" width="800">
+   </p>
+   <p align="center">
+     <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10b.png" width="900">
+   </p>
 
-The model trained on the single fold achieved good predictive performance (*R² = 0.81*), indicating that roughness can be effectively explained by a limited set of process parameters. The results, as you can see from the predictive linear equation below, confirmed layer height and nozzle temperature are the most influential variables.
-
-<p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10.png" width="800">
-</p>
-<p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/10b.png" width="900">
-</p>
+   However, *k-fold cross-validation revealed a significant reduction in performance*, suggesting **limited model generalization due to the small dataset size** (50 observations).
 
 
-However, *k-fold cross-validation revealed a significant reduction in performance*, suggesting **limited model generalization due to the small dataset size** (50 observations).
+2. To **predict tensile strength**, a *Random Forest Regressor* was implemented in order to capture nonlinear relationships and interactions among process parameters. The model was trained using a reduced set of features, including layer height, wall thickness, infill density, nozzle temperature, material, and infill pattern.
 
-
-To **predict tensile strength**, a *Random Forest Regressor* was implemented in order to capture nonlinear relationships and interactions among process parameters. The model was trained using a reduced set of features, including layer height, wall thickness, infill density, nozzle temperature, material, and infill pattern.
-
-<p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/11a.png" width="720">
-</p>
-
-<p align="center">
-  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/11b.png" width="720">
-</p>
-
-The obtained performance (*R² = 0.55 and MAE ≈ 5 MPa*) indicates a **moderate predictive capability, explaining approximately 55% of the variability in tensile strength**.
-
-Despite the limited amount of available data, repeated k-fold validation demonstrated good **model stability**, suggesting that the approach provides a *promising basis for future improvements with larger datasets*.
+   <p align="center">
+     <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/11a.png" width="720">
+   </p>
+  
+   <p align="center">
+     <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/11b.png" width="720">
+   </p>
+  
+   The obtained performance (*R² = 0.55 and MAE ≈ 5 MPa*) indicates a **moderate predictive capability, explaining approximately 55% of the variability in tensile strength**.
+  
+   Despite the limited amount of available data, repeated k-fold validation demonstrated good **model stability**, suggesting that the approach provides a *promising basis for future improvements with larger datasets*.
 
 
