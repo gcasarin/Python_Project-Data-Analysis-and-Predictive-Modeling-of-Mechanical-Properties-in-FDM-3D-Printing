@@ -17,6 +17,7 @@
 
 This study uses the "3D Printer Dataset for Mechanical Engineers" to investigate relationships between FDM printing parameters and the mechanical properties of PLA and ABS printed specimens. Statistical analysis, correlation assessment, and predictive models are developed to estimate surface roughness and tensile strength.
 
+Link to the Project Notebook: [click here⮕](https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing.ipynb)
 
 
 
@@ -55,6 +56,15 @@ Finally, elongation exhibited a moderate negative correlation with nozzle temper
   
 
 
-### Analysis Results 
+### Data Prediction 
+
+Predictive modeling was performed to estimate surface roughness and tensile strength from FDM printing parameters. 
+
+For surface roughness prediction, a **linear regression model** was developed using the most relevant features identified during the correlation analysis (*layer height, nozzle temperature, wall thickness, and material type*). The model trained on the single fold achieved good predictive performance (R² = 0.81), indicating that roughness can be effectively explained by a limited set of process parameters. The results, as you can see from the predictive linear equation below, confirmed layer height and nozzle temperature are the most influential variables.
+
+
+However, *k-fold cross-validation revealed a significant reduction in performance*, suggesting **limited model generalization due to the small dataset size** (50 observations).
+
+To predict tensile strength, a Random Forest Regressor was implemented in order to capture nonlinear relationships and interactions among process parameters. The model was trained using a reduced set of features, including layer height, wall thickness, infill density, nozzle temperature, material, and infill pattern. The obtained performance (R² = 0.55 and MAE ≈ 5 MPa) indicates a moderate predictive capability, explaining approximately 55% of the variability in tensile strength. Despite the limited amount of available data, repeated k-fold validation demonstrated good model stability, suggesting that the approach provides a promising basis for future improvements with larger datasets.
 
 
