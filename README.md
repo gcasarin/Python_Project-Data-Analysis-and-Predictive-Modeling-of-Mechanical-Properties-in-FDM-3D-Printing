@@ -67,6 +67,11 @@ Correlation analysis revealed several significant relationships between process 
 </p>
 
 Tensile strength increased with both wall thickness (r ≈ 0.4) and infill density (r ≈ 0.36), confirming the positive effect of structural reinforcement on mechanical resistance. Material-dependent behaviors were also observed: PLA tensile strength was more sensitive to infill density, whereas ABS strength was more influenced by wall thickness. 
+
+<p align="center">
+  <img src="https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Project_charts/6.png" width="600">
+</p>
+
 Finally, elongation exhibited a moderate negative correlation with nozzle temperature and layer height (r ≈ -0.53) in ABS, highlighting a different thermomechanical responses compared to PLA which showed a slight positive correlation with both parameters.
   
 
