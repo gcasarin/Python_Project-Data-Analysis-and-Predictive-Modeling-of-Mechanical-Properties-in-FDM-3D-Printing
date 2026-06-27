@@ -8,6 +8,7 @@
 - [Libraries Used](#libraries-used)
 - [Data Analysis](#data-analysis)
 - [Data Predicition](#data-prediction)
+- [Links & Sources](#links-&-sources)
 
 
 ### Project Overview
@@ -110,5 +111,11 @@ Predictive modeling was performed to estimate surface roughness and tensile stre
    The obtained performance (*R² = 0.55 and MAE ≈ 5 MPa*) indicates a **moderate predictive capability, explaining approximately 55% of the variability in tensile strength**.
   
    Despite the limited amount of available data, repeated k-fold validation demonstrated good **model stability**, suggesting that the approach provides a *promising basis for future improvements with larger datasets*.
+
+
+### Links & Sources
+- [Full Project Notebook](https://github.com/gcasarin/Python_Project-Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing/blob/main/Data-Analysis-and-Predictive-Modeling-of-Mechanical-Properties-in-FDM-3D-Printing.ipynb)
+- [Kaggle Dataset link](https://www.kaggle.com/datasets/afumetto/3dprinter/data?select=data.csv)
+- [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
 
 
